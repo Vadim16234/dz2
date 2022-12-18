@@ -8,30 +8,52 @@
 
 # __________________________РЕШЕНИЕ______________________________
 
-import random
+# import random
 
-n = int(input('Введите количество монеток: '))
-m = []
-for num in range(0,n):
-    random_number = round(random.uniform(0,1))
-    m.append(random_number)
+# n = int(input('Введите количество монеток: '))
+# m = []
+# for num in range(0,n):
+#     random_number = round(random.uniform(0,1))
+#     m.append(random_number)
 
-print(n)
-print(m)
+# print(n)
+# print(m)
 
-count = 0
-orel = 0
-reshka = 0
-for item in m:
-    if item > 0:
-        orel = orel + 1
-    elif item in m:
-        if item == 0:
-            reshka = reshka + 1
-if orel < reshka:
-    print('Необходимо перевернуть', orel, 'монеток')
-else:
-    print('Необходимо перевернуть', reshka, 'монеток')
+# count = 0
+# orel = 0
+# reshka = 0
+# for item in m:
+#     if item > 0:
+#         orel = orel + 1
+#     elif item in m:
+#         if item == 0:
+#             reshka = reshka + 1
+# if orel < reshka:
+#     print('Необходимо перевернуть', orel, 'монеток')
+# else:
+#     print('Необходимо перевернуть', reshka, 'монеток')
 
 
 
+# Задача 12
+# Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. 
+# Петя помогает Кате по математике. Он задумывает два натуральных числа X и Y (X,Y≤1000), 
+# а Катя должна их отгадать. Для этого Петя делает две подсказки. 
+# Он называет сумму этих чисел S и их произведение P. 
+# Помогите Кате отгадать задуманные Петей числа.
+
+# __________________________РЕШЕНИЕ______________________________
+
+
+S = int(input('Введите сумму двух чисел: '))
+P = int(input('Введите произведение двух чисел: '))
+
+num1 = 0
+
+while num1 <= S:
+    num2 = S - num1
+    if (num1 + num2 == S) and (num1 * num2 == P):
+        break
+    else: 
+        num1 = num1 + 1
+print('Первое число', '=', num1, '\nВторое число', '=', num2)
